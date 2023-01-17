@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.geovane.appnotas.view.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.geovane.appnotas.view.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_listGradesFragment"
+            app:destination="@id/listGradesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listGradesFragment"
+        android:name="com.geovane.appnotas.view.ListGradesFragment"
+        android:label="fragment_list_grades"
+        tools:layout="@layout/fragment_list_grades" >
+        <argument
+            android:name="studentResult"
+            app:argType="float" />
+    </fragment>
+
+</navigation>
