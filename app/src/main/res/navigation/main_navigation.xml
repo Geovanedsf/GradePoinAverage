@@ -31,8 +31,8 @@
         android:label="fragment_list_grades"
         tools:layout="@layout/fragment_list_grades" >
         <argument
-            android:name="studentResult"
-            app:argType="float" />
+            android:name="dataCalculate"
+            app:argType="com.geovane.appnotas.model.DataCalculate" />
     </fragment>
 
 </navigation>

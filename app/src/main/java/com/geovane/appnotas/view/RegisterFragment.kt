@@ -6,6 +6,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.geovane.appnotas.R
+import com.geovane.appnotas.model.DataCalculate
 import com.geovane.appnotas.model.Grades
 import com.geovane.appnotas.model.Student
 import com.geovane.appnotas.viewModel.ListGradesViewModel
@@ -44,12 +45,17 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
             )
         )
 
-        var action = RegisterFragmentDirections.actionRegisterFragmentToListGradesFragment(
-            viewModel.calcularNota(
+        val dataCalculate = DataCalculate(
+            student.name, viewModel.calcularNota(
                 student.grades.noteOne,
                 student.grades.noteTwo,
                 student.grades.noteThree,
-                student.grades.noteFour)
+                student.grades.noteFour
+            ), student.grades.subject
+        )
+
+        var action = RegisterFragmentDirections.actionRegisterFragmentToListGradesFragment(
+            dataCalculate
         )
         findNavController().navigate(action)
     }

@@ -2,7 +2,8 @@ package com.geovane.appnotas.model
 
 import java.io.Serializable
 
-data class Student(
+data class DataCalculate(
     var name: String,
-    var grades: Grades,
+    var result: Float,
+    var subject: String
 ) : Serializable

@@ -9,6 +9,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.geovane.appnotas.R
+import com.geovane.appnotas.model.DataCalculate
 import com.geovane.appnotas.resource.DataSourceGrades
 import com.geovane.appnotas.resource.ListGradesAdapter
 import kotlinx.android.synthetic.main.fragment_list_grades.*
@@ -23,26 +24,20 @@ class ListGradesFragment : Fragment(R.layout.fragment_list_grades) {
         super.onViewCreated(view, savedInstanceState)
 
         initAdapter()
-//        populaRecycler()
-
-
-//        println("<<<<<<<<<<")
-//        println(args)
-//        println("<<<<<<<<<<")
     }
 
     private fun initAdapter() {
-        listAdapter = ListGradesAdapter()
+        listAdapter = ListGradesAdapter(populaRecycler())
 
         recyclerView.apply {
-            adapter = adapter
+            adapter = listAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }
     }
 
-//    private fun populaRecycler() {
-//        DataSourceGrades.createGrades(args.grades)
-//
-//        )
-//    }
+    private fun populaRecycler() : List<DataCalculate> {
+        var dataCalculate = DataCalculate(args.dataCalculate.name, args.dataCalculate.result, args.dataCalculate.subject)
+
+        return listOf(dataCalculate)
+    }
 }

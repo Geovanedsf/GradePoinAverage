@@ -5,13 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.geovane.appnotas.R
+import com.geovane.appnotas.model.DataCalculate
 import com.geovane.appnotas.model.Grades
 import com.geovane.appnotas.model.Student
 import kotlinx.android.synthetic.main.res_list_grades.view.*
 
-class ListGradesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    private lateinit var listStudents: List<Student>
+class ListGradesAdapter(private val myList: List<DataCalculate>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ListGradesViewHolder(
@@ -25,30 +24,26 @@ class ListGradesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder) {
             is ListGradesViewHolder -> {
-            holder.bind(listStudents[position])
+            holder.bind(myList[position])
             }
         }
     }
 
     override fun getItemCount(): Int {
-        return listStudents.size
+        return myList.size
     }
-
-    fun setDataSet(list: List<Student>) {
-        listStudents = list
-    }
-
 
     class ListGradesViewHolder constructor(
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
-        fun bind(student: Student) {
-            var nameStudent = itemView.textViewNameStudent
-            var matterStudent = itemView.textViewMatterName
+        private val nameStudent = itemView.textViewNameStudent
+        private val resultStudent = itemView.textViewGrades
+        private val matterStudent = itemView.textViewMatterName
 
-
-            nameStudent.text = student.name
-            matterStudent.text = student.grades.subject
+        fun bind(dataCalculate: DataCalculate) {
+            nameStudent.text = dataCalculate.name
+            resultStudent.text = dataCalculate.result.toString()
+            matterStudent.text = dataCalculate.subject
         }
     }
 }
