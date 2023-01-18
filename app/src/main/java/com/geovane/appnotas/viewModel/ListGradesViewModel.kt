@@ -8,7 +8,8 @@ import com.geovane.appnotas.view.RegisterFragment
 class ListGradesViewModel(val fragment: RegisterFragment): ViewModel() {
 
     fun calcularNota(nota1: Float, nota2: Float, nota3: Float, nota4: Float): Float {
-        return ((nota1 + nota2) + (nota3 + nota4)) / 4
+        val result = ((nota1 + nota2) + (nota3 + nota4)) / 4
+        return result
     }
 
     class ListGradesViewModelFactory(

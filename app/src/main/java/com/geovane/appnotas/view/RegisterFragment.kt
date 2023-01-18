@@ -40,7 +40,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 editTextNoteOne.text.toString().toFloat(),
                 editTextNoteTwo.text.toString().toFloat(),
                 editTextNoteThree.text.toString().toFloat(),
-                editTextNoteFour.text.toString().toFloat()
+                editTextNoteFour.text.toString().toFloat(),
             )
         )
 
@@ -51,7 +51,6 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 student.grades.noteThree,
                 student.grades.noteFour)
         )
-
         findNavController().navigate(action)
     }
 }
