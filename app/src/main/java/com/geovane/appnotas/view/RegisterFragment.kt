@@ -44,7 +44,6 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 editTextNoteFour.text.toString().toFloat(),
             )
         )
-
         val dataCalculate = DataCalculate(
             student.name, viewModel.calcularNota(
                 student.grades.noteOne,
@@ -53,7 +52,6 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 student.grades.noteFour
             ), student.grades.subject
         )
-
         var action = RegisterFragmentDirections.actionRegisterFragmentToListGradesFragment(
             dataCalculate
         )
