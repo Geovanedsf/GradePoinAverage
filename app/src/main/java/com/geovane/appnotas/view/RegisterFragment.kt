@@ -50,7 +50,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 student.grades.noteTwo,
                 student.grades.noteThree,
                 student.grades.noteFour
-            ), student.grades.subject
+            ), student.grades.subject, emptyList()
         )
         var action = RegisterFragmentDirections.actionRegisterFragmentToListGradesFragment(
             dataCalculate
