@@ -8,8 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.geovane.appnotas.R
 import com.geovane.appnotas.model.BestNote
 
-class BestNotesAdapter
-    : RecyclerView.Adapter<BestNotesAdapter.BestNotesViewHolder>() {
+class BestNotesAdapter : RecyclerView.Adapter<BestNotesAdapter.BestNotesViewHolder>() {
 
     var listBestNotes: List<BestNote> = emptyList()
     var clickBestNotes: (bestNote: BestNote) -> Unit = {}

@@ -2,7 +2,6 @@ package com.geovane.appnotas.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.geovane.appnotas.view.ListGradesFragment
 import com.geovane.appnotas.view.RegisterFragment
 
 class ListGradesViewModel(val fragment: RegisterFragment): ViewModel() {

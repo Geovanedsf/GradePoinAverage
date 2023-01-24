@@ -1,7 +1,8 @@
-package com.geovane.appnotas
+package com.geovane.appnotas.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.geovane.appnotas.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

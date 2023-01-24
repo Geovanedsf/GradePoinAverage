@@ -13,19 +13,17 @@
         android:id="@+id/textViewResult"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#A88CF6"
+        android:background="#141315"
         android:hint="Visualizaçao das notas"
         android:textAlignment="center"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textColorHint="#EFE8E8"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:itemCount="4"
+        tools:itemCount="2"
         tools:listitem="@layout/item_notes" />
-
-
 </LinearLayout>
