@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#141315"
-        android:hint="Visualizaçao das notas"
+        android:hint="@string/visualizacao_das_notas"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textColorHint="#EFE8E8"/>

@@ -33,6 +33,12 @@
         <argument
             android:name="dataCalculate"
             app:argType="com.geovane.appnotas.model.DataCalculate" />
+        <action
+            android:id="@+id/action_listGradesFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <argument
+            android:name="student"
+            app:argType="com.geovane.appnotas.model.Student" />
     </fragment>
 
 </navigation>

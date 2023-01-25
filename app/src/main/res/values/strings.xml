@@ -2,4 +2,7 @@
     <string name="app_name">AppNotas</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="visualizacao_das_notas">Visualização das notas</string>
+    <string name="cadastrar_e_calcular">Cadastrar e calcular média</string>
+    <string name="melhores_colocados_dessa_materia">Melhores colocados dessa matéria</string>
 </resources>

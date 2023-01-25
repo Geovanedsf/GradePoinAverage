@@ -8,7 +8,10 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.geovane.appnotas.R
 import com.geovane.appnotas.model.DataCalculate
-class ListGradesAdapter(private val myList: List<DataCalculate>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ListGradesAdapter(
+
+    private val myList: List<DataCalculate>) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ListGradesViewHolder(
@@ -31,7 +34,7 @@ class ListGradesAdapter(private val myList: List<DataCalculate>) : RecyclerView.
         return myList.size
     }
 
-    class ListGradesViewHolder constructor(
+    inner class ListGradesViewHolder constructor(
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
 

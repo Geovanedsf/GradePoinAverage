@@ -9,23 +9,18 @@ import com.geovane.appnotas.R
 import com.geovane.appnotas.model.DataCalculate
 import com.geovane.appnotas.model.Grades
 import com.geovane.appnotas.model.Student
-import com.geovane.appnotas.viewModel.ListGradesViewModel
+import com.geovane.appnotas.viewmodel.RegisterViewModel
 import kotlinx.android.synthetic.main.fragment_register.*
 
 
 class RegisterFragment : Fragment(R.layout.fragment_register) {
 
-    private lateinit var viewModel: ListGradesViewModel
+    private lateinit var viewModel: RegisterViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        viewModel = ViewModelProvider(
-            this,
-            ListGradesViewModel.ListGradesViewModelFactory(this)
-        )[ListGradesViewModel::class.java]
-
         setButtonClicked()
+        setViewModel()
     }
 
     fun setButtonClicked() {
@@ -33,8 +28,16 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
             calculateGrades()
         }
     }
+
+    fun setViewModel() {
+        viewModel = ViewModelProvider(
+            this,
+            RegisterViewModel.RegisterViewModelFactory(this)
+        )[RegisterViewModel::class.java]
+    }
+
     fun calculateGrades() {
-        var student = Student(
+        val student = Student(
             editTextRegisterName.text.toString(),
             Grades(
                 editTextRegisterMatter.text.toString(),
@@ -53,7 +56,8 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
             ), student.grades.subject, emptyList()
         )
         var action = RegisterFragmentDirections.actionRegisterFragmentToListGradesFragment(
-            dataCalculate
+            dataCalculate,
+            student
         )
         findNavController().navigate(action)
     }
