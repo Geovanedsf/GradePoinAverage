@@ -6,17 +6,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.geovane.appnotas.model.Student
 import com.geovane.appnotas.view.ListGradesFragment
-import com.geovane.appnotas.view.RegisterFragment
 
 class ListGradesViewModel(private val student: Student,
                           private val fragment: ListGradesFragment): ViewModel() {
 
     private var list = mutableListOf<Student>()
 
-    fun readStudent() : List<Student> {
-        list.add(student)
-        return list
-    }
 
     fun updateStudent(student: Student, studentUpdated: Student) {
         list.remove(student)

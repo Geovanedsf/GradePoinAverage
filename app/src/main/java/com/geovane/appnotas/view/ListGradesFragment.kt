@@ -8,6 +8,7 @@ import androidx.navigation.fragment.navArgs
 import com.geovane.appnotas.R
 import com.geovane.appnotas.model.BestNote
 import com.geovane.appnotas.model.DataCalculate
+import com.geovane.appnotas.model.Student
 import com.geovane.appnotas.resource.ListGradesAdapter
 import com.geovane.appnotas.viewmodel.ListGradesViewModel
 import kotlinx.android.synthetic.main.fragment_list_grades.*
@@ -26,7 +27,13 @@ class ListGradesFragment : Fragment(R.layout.fragment_list_grades) {
     }
 
     private fun initAdapter() {
-        listAdapter = ListGradesAdapter(populaRecycler())
+        listAdapter = ListGradesAdapter(
+            setProfileList(),
+            setDataCalculateLis(),
+            { cardClicked(it) },
+            { editCard(it) },
+            { deleteCard(it) }
+        )
 
         recyclerView.apply {
             adapter = listAdapter
@@ -48,6 +55,31 @@ class ListGradesFragment : Fragment(R.layout.fragment_list_grades) {
             MockBestNote.list)
         return listOf(dataCalculate)
     }
+
+    fun setProfileList() : List<Student> {
+        var list = ArrayList<Student>()
+        list.add(args.student)
+        return list
+    }
+
+    fun setDataCalculateLis() : List<DataCalculate> {
+        var list = ArrayList<DataCalculate>()
+        list.add(args.dataCalculate)
+        return list
+    }
+
+    private fun cardClicked(student: Student) {
+        println("Clicou no card do estudante: $student")
+    }
+
+    private fun editCard(student: Student) {
+        println("Editar o estudante: $student")
+    }
+
+    private fun deleteCard(student: Student) {
+        println("Deletar o estudante: $student")
+    }
+
 
     object MockBestNote {
         private val bestNote1 = BestNote("Geovane", "10")
